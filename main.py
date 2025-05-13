@@ -1,20 +1,44 @@
+class MatrixOperations:
+    def __init__(self):
+        pass
 
-def read():
-    line = input().split()
-    rows,cols = int(line[0]), int(line[1])
+    def read(self):
+        line = input("Enter rows and columns: ").split()
+        rows, cols = int(line[0]), int(line[1])
 
-    m = []
-    for i in range(rows):
-        line = input().split()
-        row =list( map(int, line))
-        m.append(row)
-    return m
+        m = []
+        print("Enter the matrix row by row:")
+        for i in range(rows):
+            line = input().split()
+            row = list(map(int, line))
+            m.append(row)
+        return m
 
-def main():
-    print("Simple Matrix")
-    m = read()
-    print(m)
+    def add(self, m1, m2):
+        if len(m1) != len(m2) or len(m1[0]) != len(m2[0]):
+            raise ValueError("Matrices must have the same dimensions to be added.")
 
-if __name__=="__main__":
-    main()
+        result = []
+        for i in range(len(m1)):
+            row = []
+            for j in range(len(m1[0])):
+                row.append(m1[i][j] + m2[i][j])
+            result.append(row)
+        return result
 
+    def main(self):
+        print("Simple Matrix Operations")
+        print("Reading first matrix:")
+        m1 = self.read()
+        print("Reading second matrix:")
+        m2 = self.read()
+        print("Adding matrices...")
+        result = self.add(m1, m2)
+        print("Resultant Matrix:")
+        for row in result:
+            print(" ".join(map(str, row)))
+
+
+if __name__ == "__main__":
+    matrix_ops = MatrixOperations()
+    matrix_ops.main()
