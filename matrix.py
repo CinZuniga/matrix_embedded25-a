@@ -34,16 +34,3 @@ class Matrix:
     def __str__(self):
         """String representation of the matrix"""
         return str(self.data)
-
-
-from matrix import Matrix
-
-def main():
-    print("Simple Matrix")
-    matrix = Matrix()
-    matrix.read()
-    print(matrix)
-
-if __name__ == "__main__":
-    main()
-
