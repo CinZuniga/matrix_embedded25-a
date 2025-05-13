@@ -8,6 +8,12 @@ A simple matrix project
 python3 main.py
 ```
 
+## Test
+
+```bash 
+python3 main.py < tests/test_input.txt
+```
+
 ## TODO:
 1. Read a matrix from the stdin using the following format:
     - The first line is the width and the height of the matrix
