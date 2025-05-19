@@ -25,3 +25,25 @@ class MatrixOperations:
                 row.append(m1[i][j] + m2[i][j])
             result.append(row)
         return result
+
+    def pretty_print(self, matrix, title="Matrix"):
+        """
+        Prints a matrix in a formatted way with a title
+        Args:
+            matrix: 2D list representing the matrix
+            title: Optional string to display as matrix title
+        """
+        print(f"\n{title}:")
+        if not matrix:
+            print("Empty matrix")
+            return
+            
+        # Find the maximum width needed for any element
+        max_width = max(len(str(element)) 
+                       for row in matrix 
+                       for element in row)
+        
+        # Print the matrix with aligned columns
+        for row in matrix:
+            formatted_row = [str(elem).rjust(max_width) for elem in row]
+            print("[" + " ".join(formatted_row) + "]")
