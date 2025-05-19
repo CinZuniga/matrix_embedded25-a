@@ -7,8 +7,8 @@ def main():
     m1 = matrix_ops.read()
     print("Reading second matrix:")
     m2 = matrix_ops.read()
-    print("Adding matrices...")
-    result = matrix_ops.add(m1, m2)
+    print("op matrices...")
+    result = matrix_ops.dot_product(m1, m2)
     print("Resultant Matrix:")
     for row in result:
         print(" ".join(map(str, row)))
