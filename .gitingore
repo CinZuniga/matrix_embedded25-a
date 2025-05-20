@@ -2,4 +2,4 @@
 *.o
 *.tmp
 output/
-
+**/*.pyc
