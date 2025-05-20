@@ -3,3 +3,4 @@
 *.tmp
 output/
 **/*.pyc
+__pycache__/

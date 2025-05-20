@@ -15,5 +15,5 @@ def main():
     print("Result:")
     print(m3)
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
