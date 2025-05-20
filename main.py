@@ -1,17 +1,19 @@
-from matrix_operations import MatrixOperations
+from matrix import Matrix
 
 def main():
-    matrix_ops = MatrixOperations()
-    print("Simple Matrix Operations")
-    print("Reading first matrix:")
-    m1 = matrix_ops.read()
-    print("Reading second matrix:")
-    m2 = matrix_ops.read()
-    print("Adding matrices...")
-    result = matrix_ops.add(m1, m2)
-    print("Resultant Matrix:")
-    for row in result:
-        print(" ".join(map(str, row)))
+    m1 = Matrix()
+    m1.read()
+    print("Matrix 1:")
+    print(m1)
 
-if __name__ == "__main__":
+    m2 = Matrix()
+    m2.read()
+    print("Matrxi 2:")
+    print(m2)
+
+    m3 = m1 + m2
+    print("Result:")
+    print(m3)
+
+if __name__=="__main__":
     main()
