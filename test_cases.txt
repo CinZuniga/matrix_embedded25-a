@@ -1,0 +1,49 @@
+Test Case 1:
+Input: [[1, 2], [3, 4]]
+Expected Output: 2.5
+Description: Basic 2x2 matrix with integers
+
+Test Case 2:
+Input: [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]]
+Expected Output: 4.0
+Description: 2x3 matrix with floating point numbers
+
+Test Case 3:
+Input: [[0]]
+Expected Output: 0.0
+Description: Single element matrix
+
+Test Case 4:
+Input: [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+Expected Output: 1.0
+Description: 3x3 matrix with same values
+
+Test Case 5:
+Input: [[-1, -2], [-3, -4]]
+Expected Output: -2.5
+Description: Matrix with negative numbers
+
+Test Case 6:
+Input: [[0, 0], [0, 0]]
+Expected Output: 0.0
+Description: Matrix with all zeros
+
+Test Case 7:
+Input: [[1000, 2000], [3000, 4000]]
+Expected Output: 2500.0
+Description: Matrix with large numbers
+
+Test Case 8:
+Input: [[0.1, 0.2], [0.3, 0.4]]
+Expected Output: 0.25
+Description: Matrix with small decimal numbers
+
+Test Case 9:
+Input: []
+Expected Output: ValueError
+Description: Empty matrix should raise ValueError
+
+Test Case 10:
+Input: [[]]
+Expected Output: ValueError
+Description: Matrix with empty row should raise ValueError
