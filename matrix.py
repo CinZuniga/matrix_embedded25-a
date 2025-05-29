@@ -75,3 +75,24 @@ class Matrix:
     
     def __utf__(self):
         return self.pretty_print(self, '')
+    
+    def determinant(self):
+        if self.no_rows() != self.no_cols():
+            raise Exception("Determinant can only be calculated for square matrices")
+
+        def compute_determinant(matrix):
+            # Base case for 2x2 matrix
+            if len(matrix) == 2:
+                return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+            # Recursive case for larger matrices
+            determinant = 0
+            for col in range(len(matrix)):
+                sub_matrix = [
+                    [matrix[row][sub_col] for sub_col in range(len(matrix)) if sub_col != col]
+                    for row in range(1, len(matrix))
+                ]
+                determinant += ((-1) ** col) * matrix[0][col] * compute_determinant(sub_matrix)
+            return determinant
+
+        return compute_determinant(self._matrix)
