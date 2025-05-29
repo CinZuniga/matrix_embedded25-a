@@ -61,3 +61,13 @@ class TestMatrix:
             assert False, "Expected an exception but none was raised"
         except Exception as e:
             assert str(e) == "Wrong dimentions", f"Expected 'Wrong dimentions', but got {str(e)}"
+
+    def test_determinant(self):
+        # setup
+        m = Matrix()
+        m._matrix = [[1, 2], [3, 4]]
+
+        # test
+        result = m.determinant()
+        expected = -2
+        assert result == expected, f"Expected {expected}, but got {result}"
