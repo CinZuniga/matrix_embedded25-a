@@ -39,6 +39,48 @@ class Matrix:
 
         return result
 
+    def inverse(self):
+        import copy
+
+        n = self.no_rows()
+        if n != self.no_cols():
+            raise Exception("Matrix must be square to compute inverse")
+
+        A = copy.deepcopy(self._matrix)
+        I = [[float(i == j) for i in range(n)] for j in range(n)]
+
+        for i in range(n):
+            # Find pivot
+            pivot = A[i][i]
+            if pivot == 0:
+                # Try to find a non-zero pivot and swap rows
+                for j in range(i + 1, n):
+                    if A[j][i] != 0:
+                        A[i], A[j] = A[j], A[i]
+                        I[i], I[j] = I[j], I[i]
+                        pivot = A[i][i]
+                        break
+                else:
+                    raise Exception("Matrix is singular and cannot be inverted")
+
+            # Normalize row
+            for j in range(n):
+                A[i][j] /= pivot
+                I[i][j] /= pivot
+
+            # Eliminate column
+            for k in range(n):
+                if k != i:
+                    factor = A[k][i]
+                    for j in range(n):
+                        A[k][j] -= factor * A[i][j]
+                        I[k][j] -= factor * I[i][j]
+
+        result = Matrix()
+        result._matrix = I
+        return result
+
+
     def __str__(self):
         return self.pretty_print()
 
